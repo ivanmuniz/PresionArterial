@@ -1,0 +1,6 @@
+framework module Pods_PresionArterial {
+  umbrella header "Pods-PresionArterial-umbrella.h"
+
+  export *
+  module * { export * }
+}
