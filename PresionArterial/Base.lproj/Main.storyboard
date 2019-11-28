@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHC-aA-yBM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHC-aA-yBM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -120,7 +120,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presión Arterial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X8-Ne-JqT">
-                                <rect key="frame" x="83.5" y="84" width="208.5" height="35"/>
+                                <rect key="frame" x="83.5" y="84" width="208" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <color key="textColor" red="0.3803618016170312" green="0.73753262927689534" blue="0.39083571758609176" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -715,6 +715,16 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="coX-Az-3gb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xed-s0-5yz">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="editAction:" destination="HHT-y5-Scc" eventType="touchUpInside" id="wpN-OB-20x"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdd-oa-RjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -801,11 +811,57 @@
                             <outlet property="delegate" destination="VEM-N1-feh" id="Cz8-Z5-LdC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aQP-c0-4KI"/>
+                    <navigationItem key="navigationItem" id="aQP-c0-4KI">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wTa-LR-nqO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K3C-jC-9Rh">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Graficar"/>
+                                <connections>
+                                    <action selector="graficar:" destination="VEM-N1-feh" eventType="touchUpInside" id="h8B-xb-5po"/>
+                                    <segue destination="3KK-uU-kRg" kind="show" id="d1p-id-aCt"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDV-rk-7pT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3588" y="-962.06896551724151"/>
+        </scene>
+        <!--Graficar Pacientes View Controller-->
+        <scene sceneID="Ydh-AF-vqR">
+            <objects>
+                <viewController storyboardIdentifier="graficarPacientes1" id="3KK-uU-kRg" customClass="GraficarPacientesViewController" customModule="PresionArterial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X8H-Z1-YaV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sr-wC-2r8">
+                                <rect key="frame" x="141" y="289" width="92" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Graficar"/>
+                                <connections>
+                                    <action selector="grafica:" destination="3KK-uU-kRg" eventType="touchUpInside" id="dQQ-LX-XQt"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvx-5h-niW" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="62" width="375" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iQ3-bJ-l8R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oro-t9-HAF"/>
+                    <connections>
+                        <outlet property="linechart" destination="Bvx-5h-niW" id="gwC-xK-TGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0d-HP-6VP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4488.8000000000002" y="-1162.6686656671666"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wfp-ag-Fqc">
@@ -926,6 +982,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-HK-qBU">
+                                <rect key="frame" x="169.5" y="0.0" width="36" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8lV-MA-9K7"/>
+                                </constraints>
+                                <state key="normal" image="baseline_remove_black_36pt"/>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bID-Ap-J8g">
                                 <rect key="frame" x="0.0" y="20" width="375" height="627"/>
                                 <userDefinedRuntimeAttributes>
@@ -937,13 +1000,6 @@
                                     <segue destination="2ts-Hx-GfV" kind="embed" id="Er3-f1-eCo"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-HK-qBU">
-                                <rect key="frame" x="169.5" y="0.0" width="36" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8lV-MA-9K7"/>
-                                </constraints>
-                                <state key="normal" image="baseline_remove_black_36pt"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1249,7 +1305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Pa-uv-8wf" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="67" y="67" width="240" height="200"/>
+                                <rect key="frame" x="0.0" y="38" width="375" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -1272,7 +1328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVd-Zm-9Gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6862" y="-144"/>
+            <point key="canvasLocation" x="6861.6000000000004" y="-144.3778110944528"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Iea-QR-T47">

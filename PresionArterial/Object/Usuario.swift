@@ -28,6 +28,7 @@ class Usuario: NSObject {
     var circAbd: Int!
     var userType: String!
     var presion = [Presion]()
+    var eliminados = [String]()
     static var _instance: Usuario! = nil
     
     public static func getInstance() -> Usuario {
@@ -73,6 +74,9 @@ class Usuario: NSObject {
             self.edad = data["edad"] as? Int
             self.circAbd = data["circAbd"] as? Int
             self.userType = data["userType"] as? String
+            if self.userType == "Doctor" {
+                self.eliminados = (data["eliminados"] as! NSArray) as! [String] 
+            }
         }
         self.fetchPresion()
     }

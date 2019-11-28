@@ -11,17 +11,22 @@ import Firebase
 
 class DetallesPacienteTableViewController: UITableViewController, protocolDataFetched {
     
+    var diastolica1 = [Int]()
+    var sistolica1 = [Int]()
+    
     func dataReady() {
         tableView.reloadData()
     }
     let alturaCelda: CGFloat! = 95.00
     var delegatePresionesListas: protocolDataFetched!
     var presiones = [Presion]()
-    let usuario: Usuario! = Usuario.getInstance()
+   // let usuario: Usuario! = Usuario.getInstance()
     var userUID: String!
     let db = DBHandler().getDB()
     
     override func viewDidLoad() {
+        diastolica1.removeAll()
+        sistolica1.removeAll()
         super.viewDidLoad()
         title = "Lista de presiones"
         delegatePresionesListas = self
@@ -68,10 +73,28 @@ class DetallesPacienteTableViewController: UITableViewController, protocolDataFe
         cell.lbSistolica.text = "\(presiones[indexPath.row].iSistolica!)"
         cell.lbPulso.text = "\(presiones[indexPath.row].iPulso!)"
         cell.lbFecha.text = "\(presiones[indexPath.row].sTimeStamp!)"
+        
+        sistolica1.append(presiones[indexPath.row].iSistolica!)
+        diastolica1.append(presiones[indexPath.row].iDiastolica!)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return alturaCelda
+    }
+    
+    @IBAction func graficar(_ sender: Any) {
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       // if (segue.identifier == "graficarPacientes1") {
+            let registrarPresion = segue.destination as! GraficarPacientesViewController
+            registrarPresion.sistolica = sistolica1
+            registrarPresion.diastolica = diastolica1
+            
+        // }
+        
     }
 }

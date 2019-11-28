@@ -10,14 +10,21 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class HomeViewController: UIViewController, protocolDataFetched {
+class HomeViewController: UIViewController, protocolDataFetched, protocolPacientesFetched{
+    func reloadTableView() {
+        
+        
+        
+    }
+    
     
     func dataReady() {
         transition()
     }
     
     var usuario = Usuario.getInstance()
-    
+        let usersCollection = UserCollection.getInstance()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,6 +40,8 @@ class HomeViewController: UIViewController, protocolDataFetched {
                 self.view.window?.makeKeyAndVisible()
             }
         }
+        usersCollection.delegatePacientesFetched = self
+        usersCollection.fetchPacientes()
     }
     
     func transition() {

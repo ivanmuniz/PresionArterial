@@ -31,6 +31,7 @@
 		DEE160E223510A1300F5D0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE160E123510A1300F5D0EC /* Assets.xcassets */; };
 		DEE160E523510A1300F5D0EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE160E323510A1300F5D0EC /* LaunchScreen.storyboard */; };
 		FB12AB1F2385D1E60051190A /* DoctorHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB12AB1E2385D1E60051190A /* DoctorHomeTableViewController.swift */; };
+		FB175C57238C3A0900B41506 /* GraficarPacientesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB175C56238C3A0900B41506 /* GraficarPacientesViewController.swift */; };
 		FB2706422385F378009181E5 /* GraficaLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2706412385F378009181E5 /* GraficaLineViewController.swift */; };
 		FBB9EE5123872205004B1ADA /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB9EE5023872205004B1ADA /* UserCollection.swift */; };
 		FBB9EE5323872578004B1ADA /* UsuarioNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB9EE5223872577004B1ADA /* UsuarioNormal.swift */; };
@@ -64,6 +65,7 @@
 		DEE160E423510A1300F5D0EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEE160E623510A1300F5D0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB12AB1E2385D1E60051190A /* DoctorHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeTableViewController.swift; sourceTree = "<group>"; };
+		FB175C56238C3A0900B41506 /* GraficarPacientesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficarPacientesViewController.swift; sourceTree = "<group>"; };
 		FB2706412385F378009181E5 /* GraficaLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaLineViewController.swift; sourceTree = "<group>"; };
 		FBB9EE5023872205004B1ADA /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
 		FBB9EE5223872577004B1ADA /* UsuarioNormal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioNormal.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				DEE160DA23510A1100F5D0EC /* AppDelegate.swift */,
 				DE9AFC8E2380DA46004BF345 /* PresionT2TableViewCell.swift */,
 				DEE160DE23510A1200F5D0EC /* Main.storyboard */,
+				FB175C56238C3A0900B41506 /* GraficarPacientesViewController.swift */,
 				DEE160E123510A1300F5D0EC /* Assets.xcassets */,
 				DEE160E323510A1300F5D0EC /* LaunchScreen.storyboard */,
 				DEE160E623510A1300F5D0EC /* Info.plist */,
@@ -318,6 +321,7 @@
 				DEE160DB23510A1100F5D0EC /* AppDelegate.swift in Sources */,
 				DE2BA8E223547E650056B6C3 /* Usuario.swift in Sources */,
 				DE873D0B23545CD800B5C42F /* RegistrarPresionViewController.swift in Sources */,
+				FB175C57238C3A0900B41506 /* GraficarPacientesViewController.swift in Sources */,
 				FB12AB1F2385D1E60051190A /* DoctorHomeTableViewController.swift in Sources */,
 				FBB9EE5123872205004B1ADA /* UserCollection.swift in Sources */,
 				FBB9EE5323872578004B1ADA /* UsuarioNormal.swift in Sources */,

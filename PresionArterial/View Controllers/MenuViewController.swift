@@ -12,7 +12,7 @@ import FirebaseAuth
 class MenuViewController: UITableViewController {
 
     var usuario = Usuario.getInstance()
-
+    let usersCollection = UserCollection._instance
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -37,6 +37,7 @@ class MenuViewController: UITableViewController {
                     view.window?.rootViewController = homeViewController
                     view.window?.makeKeyAndVisible()
                     usuario.cleanInstance()
+                    usersCollection!.cleanInstance()
                 }
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)

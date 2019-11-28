@@ -84,14 +84,25 @@ class SignUpViewController: UIViewController {
                     // User was created successfully
                     let db = Firestore.firestore()
                    
-                    db.collection("users").document(result!.user.uid).setData(["firstName" : firstName, "lastName" : lastName, "userType" : userType, "uid" : result!.user.uid], completion: { (error) in
+                   
+                   if userType == "Paciente" { db.collection("users").document(result!.user.uid).setData(["firstName" : firstName, "lastName" : lastName, "userType" : userType, "uid" : result!.user.uid], completion: { (error) in
+                       if error != nil {
+                           // Show error message
+                           self.showError("Error guardando la información del usuario.")
+                       }
+                   })
+                   }
+                    
+                    if userType == "Doctor" { db.collection("users").document(result!.user.uid).setData(["firstName" : firstName, "lastName" : lastName, "userType" : userType, "uid" : result!.user.uid, "eliminados": [""]], completion: { (error) in
                         if error != nil {
                             // Show error message
                             self.showError("Error guardando la información del usuario.")
                         }
                     })
+                    }
                     // Transition to home screen
                     self.transitionToHome()
+                    
                 }
             }
         }
